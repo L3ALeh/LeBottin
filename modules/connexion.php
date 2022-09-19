@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 // pas d'erreur par default
 $erreur = null;
 
@@ -7,18 +7,20 @@ if(isset($_POST['email'])&& isset($_POST['password']))
 {
     $email = mysqli_real_escape_string($db, htmlspecialchars(trim($_POST['email'])));
     $password = mysqli_real_escape_string($db, htmlspecialchars(trim($_POST['password'])));
+    $hash = password_hash($password, PASSWORD_DEFAULT);
 
     if($email !== "" && $password !== "")
     {
-        $sql_query_select_user = "SELECT count(*) FROM user where email = '".$email."' and password = '".md5($password)."' ";
-        $exec_requete = mysqli_query($db, $sql_query_select_user);
+        $sql_query_select_user = "SELECT count(*) FROM user where email = '".$email."' and password = '".md5($password)."'";
+
+        $exec_requete = mysqli_query($db, $sql_query_select_user)or die(mysqli_error($db));
         $response = mysqli_fetch_array($exec_requete);
         $count = $response['count(*)'];
 
         if($count != 0) {
             // nom d'utilisateur et mot de passe correctes
             $_SESSION['email'] = $email;
-            redirect('/interface');
+            redirect('/dashboard');
         } else {
             redirect('/connexion?erreur=1'); // utilisateur ou mot de passe incorrect
         }
@@ -29,7 +31,7 @@ if(isset($_POST['email'])&& isset($_POST['password']))
 } else {
     //var_dump($_SESSION['email']);
 }
-// elle ce ferme auto en fin de script
+// elle se ferme auto en fin de script
 //mysqli_close($db); // fermer la connexion
 
 // Definir dans le module les variables utilise par le template

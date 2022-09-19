@@ -1,3 +1,19 @@
+ <?php
+  require(__PATH__.'/templates/default/navbar.html.php');
+
+$last_name = '';
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+  //$last_name = $_POST['last_name'];
+  foreach($_POST as $key => $value){
+
+    ${$key} = $value;
+  }
+
+}
+
+  ?>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -24,80 +40,80 @@
 
 
         <div class="form-group">
-            <label for="last_name" class="col-sm-4 control-label">Nom : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="last_name" type="text" class="form-control" placeholder="Votre nom :" required>
-            </div>
+          <label for="last_name" class="col-sm-4 control-label">Nom : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="last_name" type="text" class="form-control" placeholder="Votre nom :" value="<?= $last_name?>">
           </div>
-
-          <div class="form-group">
-            <label for="first_name" class="col-sm-4 control-label"> Prénom : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="first_name" type="text" class="form-control" placeholder="Votre prénom" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="gender" class="col-sm-4 control-label">Vous êtes : </label>
-            <div class="col-sm-8">
-              <select name="gender" id="" class="form-control" required>
-                <?php foreach ($tab_genders as $key => $value): ?>
-                  <option value="<?=$key?>"><?=$value?></option>
-                <?php endforeach ?>
-              </select>
-            </div>
-          </div>
+        </div>
 
         <div class="form-group">
-            <label for="address_1" class="col-sm-4 control-label">Adresse 1 : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="address_1" type="text" class="form-control" placeholder="Adresse 1" required>
-            </div>
+          <label for="first_name" class="col-sm-4 control-label"> Prénom : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="first_name" type="text" class="form-control" placeholder="Votre prénom" >
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="address_2" class="col-sm-4 control-label">Adresse 2 : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="address_2" type="text" class="form-control" placeholder="Adresse 2 (Facultative)" >
-            </div>
+        <div class="form-group">
+          <label for="gender" class="col-sm-4 control-label">Vous êtes : </label>
+          <div class="col-sm-8">
+            <select name="gender" id="" class="form-control" required>
+              <?php foreach ($tab_genders as $key => $value): ?>
+                <option value="<?=$key?>"><?=$value?></option>
+              <?php endforeach ?>
+            </select>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="city" class="col-sm-4 control-label">Ville : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="city" type="text" class="form-control" placeholder="Ville" required>
-            </div>
+        <div class="form-group">
+          <label for="address_1" class="col-sm-4 control-label">Adresse 1 : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="address_1" type="text" class="form-control" placeholder="Adresse 1" required>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="zipcode" class="col-sm-4 control-label">Code postal : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="zipcode" type="number" class="form-control" placeholder="Votre code postal" required>
-            </div>
+        <div class="form-group">
+          <label for="address_2" class="col-sm-4 control-label">Adresse 2 : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="address_2" type="text" class="form-control" placeholder="Adresse 2 (Facultative)" >
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="domain_name" class="col-sm-4 control-label">Nom de domaine : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="domain_name" type="text" class="form-control" placeholder="Votre nom de domaine" required>
-            </div>
+        <div class="form-group">
+          <label for="city" class="col-sm-4 control-label">Ville : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="city" type="text" class="form-control" placeholder="Ville" required>
           </div>
+        </div>
 
-
-          <div class="form-group">
-            <label for="firm_name" class="col-sm-4 control-label">Nom de l'entreprise : </label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="firm_name" type="text" class="form-control" placeholder="Nom de votre entrepise" required>
-            </div>
+        <div class="form-group">
+          <label for="zipcode" class="col-sm-4 control-label">Code postal : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="zipcode" type="number" class="form-control" placeholder="Votre code postal" >
           </div>
+        </div>
 
-
-          <div class="form-group">
-            <label for="phone_number" class="col-sm-4 control-label"> Numéro de téléphone :</label>
-            <div class="col-sm-8">
-              <input autocomplete="off" name="phone_number" type="tel" class="form-control" placeholder="Saisissez votre numéro de téléphone" required>
-            </div>
+        <div class="form-group">
+          <label for="domain_name" class="col-sm-4 control-label">Nom de domaine : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="domain_name" type="text" class="form-control" placeholder="Votre nom de domaine" required>
           </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="firm_name" class="col-sm-4 control-label">Nom de l'entreprise : </label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="firm_name" type="text" class="form-control" placeholder="Nom de votre entrepise" required>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="phone_number" class="col-sm-4 control-label"> Numéro de téléphone :</label>
+          <div class="col-sm-8">
+            <input autocomplete="off" name="phone_number" type="tel" class="form-control" placeholder="Saisissez votre numéro de téléphone" required>
+          </div>
+        </div>
 
         <div class="panel-body">
           <div class="form-group">
@@ -138,6 +154,8 @@
               <input autocomplete="off" name="cpassword" type="password" class="form-control" placeholder="Confirmer mot de passe" required>
             </div>
           </div>
+          <p class="box-register">Déjà inscrit? <a href="/connexion">Connectez-vous ici</a>
+
 <!---
           <div class="form-group">
             <label for="" class="col-sm-4 control-label">AntiRobot</label>
@@ -153,11 +171,10 @@
           </div>
         </div>
       -->
-        <div class="panel-footer">
-          <input type="submit" name="inscription" value="Inscription" class="btn btn-danger">
-        </div>
-      </form>
-    </div>
+      <div class="panel-footer">
+        <input type="submit" name="inscription" value="Inscription" class="btn btn-danger">
+      </div>
+    </form>
   </div>
 </div>
-<p class="box-register">Déjà inscrit? <a href="/connexion">Connectez-vous ici</a>
+</div>

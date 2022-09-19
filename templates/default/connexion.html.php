@@ -1,3 +1,6 @@
+ <?php
+  require(__PATH__.'/templates/default/navbar.html.php');
+  ?>
 <body>
       <div class="container">
   <div class="row">

@@ -4,6 +4,23 @@ $showAlert = false;
 $showError = false;
 $exists=false;
 
+
+
+print_r($_SESSION);
+
+
+$name = $_SESSION['name'];
+
+
+
+require __PATH__.'/templates/admin/header.html.php';
+
+require __PATH__.'/templates/default/profil.html.php';
+
+require __PATH__.'/templates/admin/footer.html.php';
+
+
+/*
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $last_name = $_POST["last_name"];
@@ -115,3 +132,4 @@ $tab_genders[1] = 'Un homme';
 $tab_genders[2] = 'Une femme';
 
 require __PATH__.'/templates/default/inscription.html.php';
+*/

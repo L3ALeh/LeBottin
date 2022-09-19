@@ -2,14 +2,14 @@
 <head>
 	<meta charset="utf-8">
 		<title>Le bottin, annuaire des professionnels du Web</title>
-	
+
 	<!-- LIEN CSS -->
         <link rel="stylesheet" href="" />
 
     <!-- LIEN ICONE -->
 
     <!-- -->
-	
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -28,3 +28,4 @@
 
 
 </head>
+<?php

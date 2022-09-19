@@ -1,9 +1,17 @@
+
+<html>
+<head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+
+
 
 <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
@@ -29,6 +37,10 @@
     </div>
 </div>
 
+<div class="container">
+
+<div class="row">
+
 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
 
     <ul class="nav nav-pills nav-stacked" style="border-right:1px solid black">
@@ -44,8 +56,3 @@
     </ul>
 </div><!-- /span-3 -->
 <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
-    <!-- Right -->
-
-    <a href="#"><strong><span class="fa fa-dashboard"></span> Mon tableau de bord</strong></a>
-    <hr>
-</div>
